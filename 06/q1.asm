@@ -5,11 +5,11 @@ section .data
   num2 dq 0
   operation dq 0
   fmt db "%d", 0
-  msg_num_1 db "Informe o primeiro numero: ", 0
-  msg_num_2 db "Informe o segundo numero: ", 0
+  msg_num_1 db "Informe o primeiro número: ", 0
+  msg_num_2 db "Informe o segundo número: ", 0
   msg_operation db "Escolha a operação (1: adição, 2: subtração, 3: multiplicação, 4: divisão): ", 0
   msg_result db "O resultado é: ", 0
-  msg_invalida db "Operação inválida",0
+  msg_invalid_operation db "Operação inválida.",0
 
 section .text
   global main
@@ -78,7 +78,7 @@ division:
   jmp print_result
 
 invalid_operation:
-  mov rdi, msg_invalida
+  mov rdi, msg_invalid_operation
   call printf
   jmp exit
 
